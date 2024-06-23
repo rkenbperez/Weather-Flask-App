@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Weather App</h1> 
+        <img src="/static/icon.jpg" alt="icon">
+    </div>
+    <div class="main">
+        <div class="container">
+            <form action="{{ url_for('get_weather') }}", method="post">
+                <input type="text", placeholder="City" name="city", class="city">
+                <input type="submit" value="Search", class="submit">
+            </form>
+            <div class="output">
+                <div class="results">
+                    <div class="weather">
+                        <h1>City</h1>
+                        <div class="data">
+                            {{ city }}
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h1>Weather</h1>
+                        <div class="data">
+                            {{ description }}
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h1>Temperature</h1>
+                        <div class="data">
+                            {{ current_temperature }}
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h1>Max Temp</h1>
+                        <div class="data">
+                            {{ max_temperature }}
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h1>Min Temp</h1>
+                        <div class="data">
+                            {{ min_temperature }}
+                        </div>
+                    </div>
+                    <div class="weather">
+                        <h1>Wind Speed</h1>
+                        <div class="data">
+                            {{ wind_speed }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
